@@ -8,10 +8,9 @@ on:
 
 env:
   DOCKERHUBUSERNAME: mishgan325
-  BACKENDIMAGE: mishgan325/backend
-  FRONTENDIMAGE: mishgan325/frontend
-  GATEWAYIMAGE: mishgan325/gateway
-  DBIMAGE: mishgan325/db
+  BACKENDIMAGE: mishgan325/kittygram_final-backend
+  FRONTENDIMAGE: mishgan325/kittygram_final-frontend
+  GATEWAYIMAGE: mishgan325/kittygram_final-gateway
 
 jobs:
   lint-backend:
