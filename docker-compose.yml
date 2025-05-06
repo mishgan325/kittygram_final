@@ -15,7 +15,9 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
   backend:
+    image: mishgan325/kittygram_final-backend
     build: ./backend/
     env_file: .env
     volumes:
@@ -23,13 +25,17 @@ services:
       - media:/app/media/
     depends_on:
       - db
+
   frontend:
-    env_file: .env
+    image: mishgan325/kittygram_final-frontend
     build: ./frontend/
+    env_file: .env
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
+
   gateway:
+    image: mishgan325/kittygram_final-gateway
     build: ./nginx/
     env_file: .env
     ports:
